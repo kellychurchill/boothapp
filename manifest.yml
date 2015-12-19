@@ -2,7 +2,7 @@
 applications:
 - name: ohsucookies
   memory: 512M
-  buildpack: https://github.com/cloudfoundry/php-buildpack#v4.3.1
+  buildpack: https://github.com/cloudfoundry/php-buildpack#v3.1.0
   # buildpack: https://github.com/zendtech/zend-server-php-buildpack-bluemix.git
   env:
     CF_STAGING_TIMEOUT: 15

@@ -5,5 +5,6 @@
      "WEBDIR": "htdocs/public",
      "WEB_SERVER": "nginx",
      "BP_DEBUG": true,
-     "PHP_EXTENSIONS": [ "bz2", "zlib", "openssl", "fpm",  "curl", "mcrypt", "mbstring", "pdo", "intl", "fileinfo"]
+     // "PHP_EXTENSIONS": [ "bz2", "zlib", "openssl", "fpm", "tokenizer", "curl", "mcrypt", "mbstring", "pdo", "intl", "fileinfo"]
+     "PHP_EXTENSIONS": [ "bz2″, "zlib", "openssl", "fpm", "tokenizer", "curl", "mcrypt", "mbstring", "pdo"]
 }
