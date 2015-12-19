@@ -9,7 +9,7 @@
         "laravel/framework": "5.1.*",
         "barryvdh/laravel-debugbar": "^2.0",
         "laravelcollective/html": "5.1.*",
-        "sleeping-owl/admin": "^2.0"
+        // "sleeping-owl/admin": "^2.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -50,6 +50,7 @@
         ]
     },
     "config": {
-        "preferred-install": "dist"
+        "preferred-install": "dist",
+        "vendor-dir": "htdocs/vendor"
     }
 }
