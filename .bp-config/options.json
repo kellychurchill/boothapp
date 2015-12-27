@@ -1,10 +1,8 @@
 {
      "PHP_VERSION": "{PHP_55_LATEST}",
-     // "COMPOSER_VERSION": "latest",
      "COMPOSER_VENDOR_DIR": "htdocs/vendor",
      "WEBDIR": "htdocs/public",
      "WEB_SERVER": "nginx",
      "BP_DEBUG": true,
-     // "PHP_EXTENSIONS": [ "bz2", "zlib", "openssl", "fpm", "tokenizer", "curl", "mcrypt", "mbstring", "pdo", "intl", "fileinfo"]
      "PHP_EXTENSIONS": [ "bz2″, "zlib", "openssl", "fpm", "tokenizer", "curl", "mcrypt", "mbstring", "pdo"]
 }
