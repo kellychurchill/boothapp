@@ -11,7 +11,7 @@ class TimeSlot extends SleepingOwlModel
      *
      * @var array
      */
-    protected $fillable = ['start', 'end'];
+    protected $fillable = ['start', 'end', 'type'];
 
     public function getSlotAttribute() 
     {

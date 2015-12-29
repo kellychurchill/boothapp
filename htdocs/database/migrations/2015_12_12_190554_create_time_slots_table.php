@@ -17,6 +17,7 @@ class CreateTimeSlotsTable extends Migration
             $table->increments('id');
             $table->time('start');
             $table->time('end');
+            $table->boolean('type')->default(0);
             $table->timestamps();
         });
     }

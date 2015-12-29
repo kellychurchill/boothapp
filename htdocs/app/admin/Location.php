@@ -5,6 +5,7 @@ Admin::model(App\Location::class)->title('Locations')->with()->filters(function 
 
 })->columns(function ()
 {
+	Column::string('id', 'ID');
 	Column::string('name', 'Name');
 	Column::string('address', 'Address');
 	Column::string('notes', 'Notes');

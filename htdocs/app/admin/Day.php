@@ -7,6 +7,7 @@ Admin::model(App\Day::class)
 
 })->columns(function ()
 {
+	Column::string('id', 'ID');
 	Column::date('date', 'Date')->formatDate('short');
 	Column::yesNo('weekend', 'Weekend');
 	Column::active('status', 'Status')->append(Column::filter('status')->value('status'));

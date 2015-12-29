@@ -25,4 +25,5 @@
 Column::register('yesNo', App\Column\YesNoColumn::class);
 Column::register('active', App\Column\ActiveInactiveColumn::class);
 Column::register('lowHigh', App\Column\LowHighColumn::class);
+Column::register('earlyLate', App\Column\EarlyLateColumn::class);
 
