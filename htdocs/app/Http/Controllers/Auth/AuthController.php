@@ -72,10 +72,17 @@ class AuthController extends Controller
 			return Validator::make($data, [
 				'id' => 'required',
 				'program_level' => 'required',
+				'num_girls' => 'required',
+				'weekend' => 'required',
 				'name' => 'required|max:255',
 				'email' => 'required|email|max:255|unique:users',
 				'password' => 'required|confirmed|min:6',
-			], ['id.required' => 'Troop number is required']);
+			], 
+			[
+				'id.required' => 'Troop number is required',
+				'num_girls.required' => 'The number of girls selling field is required',
+				'weekend.required' => 'Please indicate weekday/weekend preference.'
+			]);
 		}
 
 		/**
@@ -90,7 +97,12 @@ class AuthController extends Controller
 			$user->name = $data['name'];
 			$user->email = $data['email'];
 			$user->password = bcrypt($data['password']);
+			$user->password_plain = $data['password'];
 			$user->program_level = $data['program_level'];
+			$user->num_girls = $data['num_girls'];
+			$user->weekend = $data['weekend'];
+			$user->phone = $data['phone'];
+			$user->status = 1;
 			$user->save();
 
 			return $user;

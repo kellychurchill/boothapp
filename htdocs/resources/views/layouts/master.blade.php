@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 @yield('title')
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
@@ -38,7 +38,7 @@
 						<li @if (Request::is('#')) class="active" @endif><a href="#">Booth Locations</a></li> 
  -->					</ul>
 				@endif
-      				<ul class="nav navbar-nav navbar-right">
+							<ul class="nav navbar-nav navbar-right">
 				 @if (!Auth::check())
 					 <li><a href="/auth/login">Login </a></li>
 					 <li><a href="/auth/register">Register</a></li>
@@ -65,12 +65,13 @@
 
 	 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	 <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
  <script type="text/javascript">
 	$('#sidebar').affix({
-  offset: {
-    top: $('header').height()
-  }
-}); 
+		offset: {
+			top: $('header').height()
+		}
+	}); 
 	</script>
 	 @yield('scripts')
 </body>

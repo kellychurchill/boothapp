@@ -14,9 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/dashboard', function () {
+Route::get('/dashboard', ['middleware' => 'auth', function () {
     return view('dashboard');
-});
+}]);
 
 // Admin
 /*Route::get('admin/configs', 'AdminController@configs');
