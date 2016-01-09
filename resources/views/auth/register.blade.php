@@ -8,13 +8,9 @@
 				<div class="panel-heading">Register</div>
 					<div class="panel-body">
 		
-						@if (!count($troop_numbers))
-							<p>All troops have registered.</p>
-							<p>Questions or problems, contact Patty Crowe, OHSU Booth Coordinator, by <a href="mailto:ohsucookiebooths@gmail.com">email</a>.</p>	
-						@else
 							<p>Complete the form below to register for 2016 Cookie Sale booth distribution and click "Register". You must register even if you were registered for last year's sale.</p>
 							<p>Only enter one cookie coordinator's information. If you have more than one for your troop, enter the coordinator in charge of booths.</p>
-							<p>If your troop number is not listed, your troop either already registered or needs to be added to the database.</p>
+							<!-- <p>If your troop number is not listed, your troop either already registered or needs to be added to the database.</p> -->
 							<p>Questions or problems, contact Patty Crowe, OHSU Booth Coordinator, by <a href="mailto:ohsucookiebooths@gmail.com">email</a>.</p>	
 							@if (count($errors) > 0)
 									<div class="alert alert-danger">
@@ -36,15 +32,8 @@
 							<div class="form-group has-feedback">
 								<label class="col-md-4 control-label">Troop #</label>
 								<div class="col-md-6">
-									{!! Form::select('id', 
-										$troop_numbers,
-										null,
-										[
-											'placeholder' => 'Select', 
-											'class' => 'form-control', 
-											'id' => 'id'
-										]
-									) !!}
+									<input type="text" class="form-control" id="id" name="id" value="{{ old('id') }}">
+
 								</div>
 							</div>
 
@@ -136,7 +125,6 @@
 								</div>
 							</div>
 						</form>
-					@endif
 				</div>
 			</div>
 		</div>

@@ -15,7 +15,7 @@
  * 		});
  */
 
-Admin::menu()->url('/')->label('Dashboard')->icon('fa-dashboard')->uses('\SleepingOwl\Admin\Controllers\DashboardController@getIndex');
+Admin::menu()->url('/')->label('Dashboard')->icon('fa-dashboard')->uses('\App\Http\Controllers\DashboardController@getIndex');
 Admin::menu(\App\User::class)->icon('fa-user');
 Admin::menu(\App\Location::class)->icon('fa-map-marker');
 Admin::menu(\App\Day::class)->icon('fa-calendar');

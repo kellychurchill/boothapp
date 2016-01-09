@@ -16,9 +16,9 @@ Admin::model(App\User::class)
 	Column::active('status', 'Status')->append(Column::filter('status')->value('status'));
 })->form(function ()
 {
-	FormItem::text('id', 'Troop Number')->attributes(['disabled' => true]);
+	FormItem::text('id', 'Troop Number')->unique()->required();
 	FormItem::text('name', 'Coordinator');
-	FormItem::text('email', 'Email');
+	FormItem::text('email', 'Email')->unique()->required();
 	FormItem::text('phone', 'Phone');
 	FormItem::text('num_girls', 'Number of Girls');
 	FormItem::select('program_level', 'Program Level')->enum(['Brownie', 'Junior', 'Cadette', 'Senior', 'Ambassador']);

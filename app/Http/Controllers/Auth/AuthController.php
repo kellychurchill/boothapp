@@ -43,7 +43,7 @@ class AuthController extends Controller
 		 */
 		public function getRegister()
 		{
-			$users = User::all();
+/*			$users = User::all();
 
 			$troop_numbers = $users
 				->filter(function($user) {
@@ -51,10 +51,10 @@ class AuthController extends Controller
 				})
 				->lists('id', 'id')
 				->sort();
-
+*/
 			$program_levels = User::ProgramLevels();
 			$data = [
-				'troop_numbers'  => $troop_numbers,
+				// 'troop_numbers'  => $troop_numbers,
 				'program_levels' => $program_levels
 			];
 			return view('auth.register')
@@ -70,7 +70,7 @@ class AuthController extends Controller
 		protected function validator(array $data)
 		{
 			return Validator::make($data, [
-				'id' => 'required',
+				'id' => 'required|unique:users',
 				'program_level' => 'required',
 				'num_girls' => 'required',
 				'weekend' => 'required',
@@ -93,16 +93,16 @@ class AuthController extends Controller
 		 */
 		protected function create(array $data)
 		{
-			$user = User::find($data['id']);
+			$user = new User;
+			$user->id = $data['id'];
 			$user->name = $data['name'];
 			$user->email = $data['email'];
 			$user->password = bcrypt($data['password']);
-			$user->password_plain = $data['password'];
 			$user->program_level = $data['program_level'];
 			$user->num_girls = $data['num_girls'];
 			$user->weekend = $data['weekend'];
 			$user->phone = $data['phone'];
-			$user->status = 1;
+			$user->status = 0;
 			$user->save();
 
 			return $user;

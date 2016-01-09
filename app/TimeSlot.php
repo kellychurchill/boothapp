@@ -18,9 +18,9 @@ class TimeSlot extends SleepingOwlModel
         return date('g:i a', strtotime($this->attributes['start']))  . ' - ' .  date('g:i a', strtotime($this->attributes['end']));
     }
 
-    public function getStartAttribute() {
+/*    public function getStartAttribute() {
         return date('g:i a', strtotime($this->attributes['start']));
-    }
+    }*/
 
     public static function getList() 
     {

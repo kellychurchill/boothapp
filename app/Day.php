@@ -30,10 +30,10 @@ class Day extends SleepingOwlModel
      *
      * @return string
      */
-    public function getDateAttribute()
+/*    public function getDateAttribute()
     {
         return  date('m/d/Y', strtotime($this->attributes['date']));
-    }
+    }*/
 
     public static function getList() {
         return static::lists('date', 'id')->all();
