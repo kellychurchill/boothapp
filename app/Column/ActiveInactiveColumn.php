@@ -7,7 +7,7 @@ class ActiveInactiveColumn extends BaseColumn
 
     public function render($instance, $totalCount)
     {
-       $content = (($instance->{$this->name}) === 1) ? 'Active' : 'Inactive';
+       $content = (($instance->{$this->name})) ? 'Active' : 'Inactive';
         return parent::render($instance, $totalCount, $content);
     }
 

@@ -23,5 +23,5 @@ Admin::model(App\User::class)
 	FormItem::text('num_girls', 'Number of Girls');
 	FormItem::select('program_level', 'Program Level')->enum(['Brownie', 'Junior', 'Cadette', 'Senior', 'Ambassador']);
 	FormItem::select('weekend', 'Weekend only?')->list([1 => 'Yes', 0 => 'No']);
-	FormItem::select('status', 'Status')->list([1 => 'Active', 0 => 'Inactive'])->required();
+	FormItem::checkbox('status', 'Active?')->required();
 });
