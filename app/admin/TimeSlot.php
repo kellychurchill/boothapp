@@ -10,7 +10,7 @@ Admin::model(App\TimeSlot::class)
 	Column::string('id', 'ID');
 	Column::date('start', 'Start')->format('none', 'short');
 	Column::date('end', 'End')->format('none', 'short');
-	Column::earlyLate('type', 'Type')->append(Column::filter('type')->value('type'));
+	Column::earlyLate('type', 'Type');
 })->form(function ()
 {
 	FormItem::time('start', 'Start')->required();

@@ -18,13 +18,16 @@ Route::get('/dashboard', ['middleware' => 'auth', function () {
     return view('dashboard');
 }]);
 
-// Admin
-/*Route::get('admin/configs', 'AdminController@configs');
-Route::get('admin/days', 'AdminController@days');
-Route::get('admin/locations', 'AdminController@locations');
-Route::get('admin/troops', 'AdminController@troops');
-Route::get('admin', 'AdminController@admin');
-*/
+Route::get('/booths', 'BoothController@index');
+Route::get('/booth/{booth}', 'BoothController@store');
+Route::post('/booths', 'BoothController@updateBooths');
+Route::delete('/booth/{booth}', 'BoothController@destroy');
+
+Route::get('/available', 'AvailableController@index');
+Route::put('/available/{booth}', 'AvailableController@takeBooth');
+
+Route::get('/locations', 'LocationsController@index');
+
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');

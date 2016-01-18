@@ -27,5 +27,25 @@ class Booth extends SleepingOwlModel
 		return $this->belongsTo('App\TimeSlot');
 	}
 
+    public static function getBooths($day, $early = false, $weekend = false) {
+
+       	if ($early) {
+    		$type = [1];
+    	} else {
+    		$type = [0];
+    	}
+    	if ($weekend) {
+    		$type = [0, 1];
+    	}
+        return Booth::join('days', 'days.id', '=', 'day_id')
+        			->join('time_slots', 'time_slots.id', '=', 'time_slot_id')
+                    ->where('user_id', 0)
+                    ->where('day_id', $day)
+                    ->whereIn('time_slots.type', $type)
+                    ->orderBy('day_id', 'asc')
+                    ->get();
+    }
+
+
 
 }

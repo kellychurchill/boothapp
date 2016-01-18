@@ -27,3 +27,4 @@ Column::register('active', App\Column\ActiveInactiveColumn::class);
 Column::register('lowHigh', App\Column\LowHighColumn::class);
 Column::register('earlyLate', App\Column\EarlyLateColumn::class);
 
+AdminRouter::post('admin/assign', 'App\Http\Controllers\MyController@postMyUrl');

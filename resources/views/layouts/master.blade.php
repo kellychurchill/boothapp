@@ -33,10 +33,10 @@
 				@if (Auth::check()) 
 					<ul class="nav navbar-nav">
 						<li @if (Request::is('dashboard')) class="active" @endif><a href="/dashboard">Dashboard</a></li>
-<!-- 						<li @if (Request::is('#')) class="active" @endif><a href="#">Your Booths</a></li>
-						<li @if (Request::is('#')) class="active" @endif><a href="#">Available Booths</a></li>
-						<li @if (Request::is('#')) class="active" @endif><a href="#">Booth Locations</a></li> 
- -->					</ul>
+ 						<li @if (Request::is('booths')) class="active" @endif><a href="/booths">Your Booths</a></li>
+						<li @if (Request::is('available')) class="active" @endif><a href="/available">Available Booths</a></li>
+						<li @if (Request::is('locations')) class="active" @endif><a href="/locations">Booth Locations</a></li> 
+					</ul>
 				@endif
 							<ul class="nav navbar-nav navbar-right">
 				 @if (!Auth::check())

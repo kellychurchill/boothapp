@@ -15,9 +15,10 @@
  * 		});
  */
 
-Admin::menu()->url('/')->label('Dashboard')->icon('fa-dashboard')->uses('\App\Http\Controllers\DashboardController@getIndex');
+Admin::menu()->url('/')->label('Dashboard')->icon('fa-dashboard')->uses('\App\Http\Controllers\AdminController@getIndex');
 Admin::menu(\App\User::class)->icon('fa-user');
 Admin::menu(\App\Location::class)->icon('fa-map-marker');
 Admin::menu(\App\Day::class)->icon('fa-calendar');
 Admin::menu(\App\TimeSlot::class)->icon('fa-clock-o');
 Admin::menu(\App\Booth::class)->icon('fa-building');
+// Admin::menu()->url('assign')->label('Assign Booths')->uses('\App\Http\Controllers\AdminController@getIndex');

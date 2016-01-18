@@ -53,4 +53,16 @@ class User extends SleepingOwlModel implements AuthenticatableContract,
         return static::lists('id', 'id')->all();
     }
 
+    public static function getTroops($program_level, $weekend = false) {
+        $type = [0];
+        if ($weekend) {
+            $type = [0, 1];
+        }
+
+        return User::where('program_level', $program_level)
+                    ->where('status', 1)
+                    ->whereIn('weekend', $type)
+                    ->orderBy('id', 'asc')
+                    ->get();
+    }
 }
