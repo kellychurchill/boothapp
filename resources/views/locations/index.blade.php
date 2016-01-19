@@ -23,14 +23,14 @@
 							<tbody>
 								@foreach ($locations as $location)
 									<tr>
-										<td class="table-text">
+										<td class="table-text" width="20%">
 											<div>{{ $location->name }}</div>
 										</td>
 
-										<td class="table-text">
+										<td class="table-text" width="35%">
 											<div><a href="http://maps.google.com/#!q={{$location->address}}" target="_blank">{{ $location->address }}</a></div>
 										</td>
-										<td class="table-text">
+										<td class="table-text" width="45%">
 											<div>{{ $location->notes }}</div>
 										</td>
 
