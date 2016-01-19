@@ -15,7 +15,7 @@ Admin::model(App\Location::class)->title('Locations')->with()->filters(function 
 {
 	FormItem::text('name', 'Name')->required();
 	FormItem::text('address', 'Address');
-	FormItem::select('type', 'Type')->list([0 => 'High yield', 1 => 'Low yield'])->required();
-	FormItem::select('status', 'Status')->list([1 => 'Active', 0 => 'Inactive']);
+	FormItem::select('type', 'Type')->list([0 => 'High yield', 1 => 'Low yield']);
+	FormItem::select('status', 'Status')->list([1 => 'Active', 0 => 'Inactive'])->required();
 	FormItem::ckeditor('notes', 'Notes');
 });
