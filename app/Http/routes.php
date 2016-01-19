@@ -27,6 +27,7 @@ Route::get('/available', 'AvailableController@index');
 Route::put('/available/{booth}', 'AvailableController@takeBooth');
 
 Route::get('/locations', 'LocationsController@index');
+Route::get('/reports', 'ReportsController@index');
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');

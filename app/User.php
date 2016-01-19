@@ -36,7 +36,7 @@ class User extends SleepingOwlModel implements AuthenticatableContract,
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'phone', 'status', 'program_level', 'weekend', 'num_girls'];
+    protected $fillable = ['id', 'name', 'email', 'phone', 'status', 'program_level', 'weekend', 'num_girls'];
 
     /**
      * The attributes excluded from the model's JSON form.

@@ -36,6 +36,7 @@
  						<li @if (Request::is('booths')) class="active" @endif><a href="/booths">Your Booths</a></li>
 						<li @if (Request::is('available')) class="active" @endif><a href="/available">Available Booths</a></li>
 						<li @if (Request::is('locations')) class="active" @endif><a href="/locations">Booth Locations</a></li> 
+						<li @if (Request::is('reports')) class="active" @endif><a href="/reports">Booth Reports</a></li> 
 					</ul>
 				@endif
 							<ul class="nav navbar-nav navbar-right">

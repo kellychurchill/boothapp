@@ -44,6 +44,18 @@ class BoothRepository
     }
 
     /**
+     * Get all of the booths.
+     *
+     * @param  User  $user
+     * @return Collection
+     */
+    public function boothReports()
+    {
+        return Booth::orderBy('day_id', 'asc')
+            ->paginate(50);
+    }
+
+    /**
      * Get all of the unassigned early booths.
      *
      * @param  User  $user
