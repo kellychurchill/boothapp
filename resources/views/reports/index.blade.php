@@ -35,7 +35,7 @@
 											<div>{{ $booth->location->name }}</div>
 										</td>
 										<td>
-											<div>{{ ($booth->user_id === 0) ? 'Unused' : $booth->total }}</div>
+											<div>{{ ($booth->user_id) ? $booth->total  : 'Unused' }}</div>
 										</td>
 									</tr>
 								@endforeach
