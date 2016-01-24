@@ -27,6 +27,7 @@
 									<th>Date</th>
 									<th>Time</th>
 									<th>Location</th>
+									<th>Location Notes</th>
 									<th>Total Sold</th>
 							</thead>
 
@@ -49,7 +50,10 @@
 											<div>{{ $booth->location->name }}</div>
 										</td>
 										<td class="table-text">
-											 <div class="form-group col-xs-3">
+											<div>{{ $booth->location->notes }}</div>
+										</td>
+										<td class="table-text">
+											 <div class="form-group">
 												{!! Form::text('totals[' . $booth->id . ']', $booth->total, array('class'=>'form-control')) !!}
 										</div>
 

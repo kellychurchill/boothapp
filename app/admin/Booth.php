@@ -19,5 +19,5 @@ Admin::model(App\Booth::class)
 	FormItem::select('location_id', 'Location')->list('App\Location')->required();
 	FormItem::select('day_id', 'Day')->list('App\Day')->required();
 	FormItem::select('time_slot_id', 'Time Slot')->list('App\TimeSlot')->required();
-	FormItem::select('user_id', 'Troop')->list('App\User');
+	FormItem::select('user_id', 'Troop')->list('App\User')->nullable();
 });

@@ -52,7 +52,10 @@ class User extends SleepingOwlModel implements AuthenticatableContract,
     public static function getList() {
         return static::lists('id', 'id')->all();
     }
-
+    public function scopeDefaultSort($query)
+    {
+        return $query->orderBy('id', 'asc');
+    }
     public static function getTroops($program_level, $weekend = false) {
         $type = [0];
         if ($weekend) {
