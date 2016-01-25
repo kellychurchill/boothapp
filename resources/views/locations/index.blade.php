@@ -31,7 +31,7 @@
 											<div><a href="http://maps.google.com/#!q={{$location->address}}" target="_blank">{{ $location->address }}</a></div>
 										</td>
 										<td class="table-text" width="45%">
-											<div>{{ $location->notes }}</div>
+											<div>{!! $location->notes !!}</div>
 										</td>
 
 									</tr>

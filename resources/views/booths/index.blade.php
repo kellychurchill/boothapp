@@ -50,7 +50,7 @@
 											<div>{{ $booth->location->name }}</div>
 										</td>
 										<td class="table-text">
-											<div>{{ $booth->location->notes }}</div>
+										<div>{!! $booth->location->notes !!}</div>
 										</td>
 										<td class="table-text">
 											 <div class="form-group">

@@ -46,6 +46,7 @@
 								@endforeach
 							</tbody>
 						</table>
+						{!! $booths->render() !!}
 					@else
 						<p>No booths are available.</p>
 				 @endif
