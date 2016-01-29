@@ -11,7 +11,7 @@ class Booth extends SleepingOwlModel
      *
      * @var array
      */
-    protected $fillable = ['location_id', 'time_slot_id', 'user_id', 'day_id'];
+    protected $fillable = ['location_id', 'time_slot_id', 'user_id', 'day_id', 'total'];
 
 	public function location()
 	{
