@@ -10,7 +10,7 @@
 
 			<div class="panel-body">
 				@if (count($booths) > 0)
-						<table class="table table-striped booth-table">
+						<table id="available" class="table table-striped booth-table">
 
 							<!-- Table Headings -->
 							<thead>
@@ -53,4 +53,11 @@
 			 </div>
 		</div>
 
+@endsection
+@section('scripts')
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#available').DataTable();
+		});
+	</script>
 @endsection
