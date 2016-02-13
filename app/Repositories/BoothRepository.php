@@ -41,7 +41,7 @@ class BoothRepository
                     ->where('days.date', '<', $releaseDate[0]->value)
                     ->where('days.date', '>', $today)
                     ->orderBy('day_id', 'asc')
-                     ->paginate(50);
+                     ->paginate(100);
     }
 
     /**
@@ -53,7 +53,7 @@ class BoothRepository
     public function boothReports()
     {
         return Booth::orderBy('day_id', 'asc')
-            ->paginate(50);
+            ->paginate(100);
     }
 
     /**
