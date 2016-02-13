@@ -40,7 +40,8 @@ class BoothRepository
                     ->where('user_id', 0)
                     ->where('days.date', '<', $releaseDate[0]->value)
                     ->where('days.date', '>', $today)
-                    ->orderBy('day_id', 'asc');
+                    ->orderBy('day_id', 'asc')
+                    ->get();
     }
 
     /**
@@ -51,7 +52,7 @@ class BoothRepository
      */
     public function boothReports()
     {
-        return Booth::orderBy('day_id', 'asc');
+        return Booth::orderBy('day_id', 'asc')->get();
     }
 
     /**
