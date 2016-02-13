@@ -32,7 +32,7 @@ class Day extends SleepingOwlModel
      */
     public function getDateAttribute()
     {
-        return  date('m/d/Y', strtotime($this->attributes['date']));
+        return ($this->attributes['date']) ? date('m/d/Y', strtotime($this->attributes['date'])) : '';
     }
 
     public static function getList() {

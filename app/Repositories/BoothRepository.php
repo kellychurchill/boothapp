@@ -35,7 +35,7 @@ class BoothRepository
     public function avaialableBooths()
     {
         $releaseDate =  DB::select('select * from configs where id = ?', [1]);
-        $today = ('2016-01-24');
+        $today = date('Y-m-d');
         return Booth::join('days', 'days.id', '=', 'day_id')
                     ->where('user_id', 0)
                     ->where('days.date', '<', $releaseDate[0]->value)
