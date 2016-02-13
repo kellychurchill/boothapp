@@ -17,7 +17,10 @@ Route::get('/', function () {
 Route::get('/dashboard', ['middleware' => 'auth', function () {
     return view('dashboard');
 }]);
-
+Route::post('/dashboard',  [
+	'middleware' => 'auth', 
+    'uses' => 'DashboardController@updateStatus'
+]);
 Route::get('/booths', 'BoothController@index');
 Route::get('/booth/{booth}', 'BoothController@store');
 Route::post('/booths', 'BoothController@updateBooths');

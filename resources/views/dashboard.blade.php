@@ -2,6 +2,7 @@
 
 @section('content')
 <h1>Hello Troop {{ Auth::user()->id }} </h1>
+
 <p>Welcome to the OHSU Cookie Booth Website!</p>
 <p>2016 Cookie sales begin January 20th and booth sales begin January 23rd. Booths will be distributed according to the following schedule (subject to change):</p>
 <ul>
@@ -12,4 +13,27 @@
 	<li>Monday 2/15: Remainder of the sale</li>
 </ul>
 <p>The final day of the cookie sale is Feburary 26, 2016. Additional booths may be scheduled for the weekend of February 27-28, if needed.</p>
+<div class="panel panel-default">
+	<div class="panel-body">
+		@if (Auth::user()->status)
+			<div class="alert alert-success">
+				Your status is Actively Selling at booths.
+			</div>
+			<p>To stop receiving booths, click the button below to update your status.</p>
+			<form method="POST" action="/dashboard">
+				{{ csrf_field() }}
+				<button>We do not want booths</button>
+			</form>
+		@else
+			<div class="alert alert-danger">
+				Your status is Not Selling at booths.
+			</div>
+			<p>To begin receiving booths, click the button below to update your status.</p>
+			<form method="POST" action="/dashboard">
+				{{ csrf_field() }}
+				<button>We want booths</button>
+			</form>
+		@endif
+	</div>
+</div>
 @endsection

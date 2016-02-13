@@ -1,21 +1,25 @@
 <?php namespace App\Http\Controllers;
 
-use SleepingOwl\Admin\Admin;
+use Auth;
+use App\User;
+use Illuminate\Http\Request;
 
-use View;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
 
 class DashboardController extends Controller
 {
-	public function getIndex()
+	/**
+	 * Update status.
+	 *
+	 * @param  Request  $request
+	 * @return Response
+	 */
+	public function updateStatus(Request $request)
 	{
-		$content = '
-		<div class="row">
-			<div class="col-lg-12">
-				<h1 class="page-header">Admin Dashboard </h1>
-				
-			</div>
-		</div>
-		';
-		return Admin::view($content, 'Dashboard');
+		$user = User::findOrFail($request->user()->id);
+		$user->status = ($user->status) ? 0 : 1;
+		$user->save();
+ 		return redirect('/dashboard');
 	}
 } 
