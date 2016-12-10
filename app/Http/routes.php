@@ -15,7 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/dashboard', ['middleware' => 'auth', function () {
-    return view('dashboard');
+    return view('dashboard', ['content' =>  DB::select('select * from configs where id = ?', [3])
+]);
 }]);
 Route::post('/dashboard',  [
 	'middleware' => 'auth', 
