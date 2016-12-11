@@ -7,6 +7,7 @@ Admin::model(App\Booth::class)
 
 })->columns(function ()
 {
+	 Column::string('id', 'ID');
 	 Column::string('location.name', 'Location');
 	 Column::string('day.date', 'Date');
 	 Column::string('time_slot.slot', 'Time');
