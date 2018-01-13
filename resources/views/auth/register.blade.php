@@ -8,7 +8,7 @@
 				<div class="panel-heading">Register</div>
 					<div class="panel-body">
 		
-							<p>Complete the form below to register for 2016 Cookie Sale booth distribution and click "Register". You must register even if you were registered for last year's sale.</p>
+							<p>Complete the form below to register for {{ date('Y') }}  Cookie Sale booth distribution and click "Register". You must register even if you were registered for last year's sale.</p>
 							<p>Only enter one cookie coordinator's information. If you have more than one for your troop, enter the coordinator in charge of booths.</p>
 							<!-- <p>If your troop number is not listed, your troop either already registered or needs to be added to the database.</p> -->
 							<p>Questions or problems, contact Patty Crowe, OHSU Booth Coordinator, by <a href="mailto:ohsucookiebooths@gmail.com">email</a>.</p>	
