@@ -39,7 +39,7 @@ class BoothRepository
         return Booth::join('days', 'days.id', '=', 'day_id')
                     ->where('user_id', 0)
                     ->where('days.date', '<', $releaseDate[0]->value)
-                    ->where('days.date', '>', $today)
+                    ->where('days.date', '>=', $today)
                     ->orderBy('day_id', 'asc')
                     ->get();
     }
