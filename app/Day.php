@@ -25,15 +25,6 @@ class Day extends SleepingOwlModel
         return $this->hasMany('App\Booth');
     }
 
-    /**
-     * Format the date
-     *
-     * @return string
-     */
-    public function getDateAttribute()
-    {
-        return ($this->attributes['date']) ? date('m/d/Y', strtotime($this->attributes['date'])) : '';
-    }
 
     public static function getList() {
         return static::lists('date', 'id')->all();
